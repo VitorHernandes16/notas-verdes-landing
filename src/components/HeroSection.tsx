@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Phone } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -25,7 +27,7 @@ const HeroSection = () => {
               Cada notinha verde doada se transforma em esperança e oportunidades
               para quem mais precisa.
             </h2>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-4">
               <button 
                 onClick={() => {
                   document.getElementById('reasons')?.scrollIntoView({ behavior: 'smooth' });
@@ -34,14 +36,23 @@ const HeroSection = () => {
               >
                 Saiba mais
               </button>
-              <button 
+              <Button 
                 onClick={() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-white border-2 border-primary text-primary hover:bg-primary/10 font-bold py-3 px-6 rounded-lg transition-colors"
+                className="bg-white border-2 border-primary text-primary hover:bg-primary/10 font-bold"
               >
                 Contato
-              </button>
+              </Button>
+              <Button 
+                onClick={() => {
+                  window.open('https://wa.me/5500000000000', '_blank');
+                }}
+                className="bg-green-600 hover:bg-green-700 text-white font-bold"
+              >
+                <Phone className="mr-2" size={18} />
+                WhatsApp
+              </Button>
             </div>
           </div>
         </div>
